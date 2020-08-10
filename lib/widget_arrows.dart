@@ -44,18 +44,18 @@ class _ArrowTestState extends State<ArrowTest> {
             child: Stack(
               children: <Widget>[
                 SourceWidget(
+                  alignment: Alignment.center,
                   title: 'C',
                   targetTitle: 'C1',
-                  gkey: gKey,
+                  key: gKey,
                 ),
 
-                Align(
+                SourceWidget(
                   alignment: Alignment.centerRight,
-                  child: SourceWidget(
-                    title: 'C1',
-                    gkey: gKey1,
-                    // targetTitle: 'C2',
-                  ),
+
+                  title: 'C1',
+                  key: gKey1,
+                  // targetTitle: 'C2',
                 ),
 
                 // Align(
