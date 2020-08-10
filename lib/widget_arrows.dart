@@ -13,8 +13,8 @@ class ArrowTest extends StatefulWidget {
 class _ArrowTestState extends State<ArrowTest> {
   // bool showArrows = true;
   // Offset sourceOffset = Offset.zero;
-  final GlobalKey gKey = GlobalKey();
-  final GlobalKey gKey1 = GlobalKey();
+  // final GlobalKey gKey = GlobalKey();
+  // final GlobalKey gKey1 = GlobalKey();
   // final GlobalKey gKey2 = GlobalKey();
 
   // final GlobalKey gKey3 = GlobalKey();
@@ -41,105 +41,110 @@ class _ArrowTestState extends State<ArrowTest> {
         child: Material(
           child: Padding(
             padding: const EdgeInsets.all(28.0),
-            child: Stack(
-              children: <Widget>[
-                SourceWidget(
-                  alignment: Alignment.center,
-                  title: 'C',
-                  targetTitle: 'C1',
-                  key: gKey,
-                ),
+            child: SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Stack(
+                // fit: StackFit.expand,
+                children: <Widget>[
+                  SourceWidget(
+                    alignment: Alignment.center,
+                    title: 'C',
+                    targetTitle: 'C1',
+                    // key: gKey,
+                  ),
 
-                SourceWidget(
-                  alignment: Alignment.centerRight,
+                  SourceWidget(
+                    alignment: Alignment.centerRight,
 
-                  title: 'C1',
-                  key: gKey1,
-                  // targetTitle: 'C2',
-                ),
+                    title: 'C1',
+                    // key: gKey1,
+                    // targetTitle: 'C2',
+                  ),
 
-                // Align(
-                //   // key: gKey2,
-                //   alignment: Alignment.center,
-                //   child: Container(
-                //     decoration: BoxDecoration(
-                //         color: Colors.amber,
-                //         borderRadius: BorderRadius.circular(20)),
-                //     // color: Colors.amber,
-                //     width: 100,
-                //     height: 100,
-                //     child: ArrowElement(
-                //       color: Colors.greenAccent,
-                //       // show: showArrows,
-                //       id: 'text2',
-                //       // targetId: 'text1',
-                //       targetIdList: ['text1', 'text3'],
-                //       sourceAnchor: Alignment.topCenter,
+                  // Align(
+                  //   // key: gKey2,
+                  //   alignment: Alignment.center,
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //         color: Colors.amber,
+                  //         borderRadius: BorderRadius.circular(20)),
+                  //     // color: Colors.amber,
+                  //     width: 100,
+                  //     height: 100,
+                  //     child: ArrowElement(
+                  //       color: Colors.greenAccent,
+                  //       // show: showArrows,
+                  //       id: 'text2',
+                  //       // targetId: 'text1',
+                  //       targetIdList: ['text1', 'text3'],
+                  //       sourceAnchor: Alignment.topCenter,
 
-                //       targetAnchor: Alignment.center,
-                //       child: Center(
-                //         child: Text(
-                //           'C1',
-                //           // style: Theme.of(context).textTheme.headline4,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                // Align(
-                //   // key: gKey1,
-                //   alignment: Alignment.topRight,
-                //   child: Container(
-                //     decoration: BoxDecoration(
-                //         color: Colors.amber,
-                //         borderRadius: BorderRadius.circular(20)),
-                //     // color: Colors.amber,
-                //     width: 100,
-                //     height: 100,
-                //     child: ArrowElement(
-                //       color: Colors.yellowAccent,
-                //       // show: showArrows,
-                //       id: 'text1',
-                //       // targetId: 'text',
-                //       sourceAnchor: Alignment.center,
+                  //       targetAnchor: Alignment.center,
+                  //       child: Center(
+                  //         child: Text(
+                  //           'C1',
+                  //           // style: Theme.of(context).textTheme.headline4,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // Align(
+                  //   // key: gKey1,
+                  //   alignment: Alignment.topRight,
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //         color: Colors.amber,
+                  //         borderRadius: BorderRadius.circular(20)),
+                  //     // color: Colors.amber,
+                  //     width: 100,
+                  //     height: 100,
+                  //     child: ArrowElement(
+                  //       color: Colors.yellowAccent,
+                  //       // show: showArrows,
+                  //       id: 'text1',
+                  //       // targetId: 'text',
+                  //       sourceAnchor: Alignment.center,
 
-                //       targetAnchor: Alignment.center,
-                //       child: Center(
-                //         child: Text(
-                //           'C2',
-                //           // style: Theme.of(context).textTheme.headline4,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                // Align(
-                //   // key: gKey3,
-                //   alignment: Alignment.bottomRight,
-                //   child: Container(
-                //     decoration: BoxDecoration(
-                //         color: Colors.amber,
-                //         borderRadius: BorderRadius.circular(20)),
-                //     // color: Colors.amber,
-                //     width: 100,
-                //     height: 100,
-                //     child: ArrowElement(
-                //       color: Colors.yellowAccent,
-                //       // show: showArrows,
-                //       id: 'text3',
-                //       // targetId: 'text',
-                //       sourceAnchor: Alignment.centerRight,
-                //       // targetAnchor: Alignment.center,
-                //       child: Center(
-                //         child: Text(
-                //           'C3',
-                //           // style: Theme.of(context).textTheme.headline4,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-              ],
+                  //       targetAnchor: Alignment.center,
+                  //       child: Center(
+                  //         child: Text(
+                  //           'C2',
+                  //           // style: Theme.of(context).textTheme.headline4,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // Align(
+                  //   // key: gKey3,
+                  //   alignment: Alignment.bottomRight,
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //         color: Colors.amber,
+                  //         borderRadius: BorderRadius.circular(20)),
+                  //     // color: Colors.amber,
+                  //     width: 100,
+                  //     height: 100,
+                  //     child: ArrowElement(
+                  //       color: Colors.yellowAccent,
+                  //       // show: showArrows,
+                  //       id: 'text3',
+                  //       // targetId: 'text',
+                  //       sourceAnchor: Alignment.centerRight,
+                  //       // targetAnchor: Alignment.center,
+                  //       child: Center(
+                  //         child: Text(
+                  //           'C3',
+                  //           // style: Theme.of(context).textTheme.headline4,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                ],
+              ),
             ),
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:mindmapwithflutter/source_widget.dart';
 class WidgetProvider extends ChangeNotifier {
   Map<String, Widget> allWidgets;
   String widgetCount;
+  List<Offset> offsets = [];
   WidgetProvider()
       : allWidgets = {},
         widgetCount = '';
@@ -12,4 +13,9 @@ class WidgetProvider extends ChangeNotifier {
     allWidgets['widgetCount'] = widget;
     widgetCount = (int.parse(widgetCount) + 1).toString();
   }
+}
+
+class DragBox {
+  Offset sourceOffset;
+  List<Widget> sourceWidgetList;
 }

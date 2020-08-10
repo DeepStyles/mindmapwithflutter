@@ -9,13 +9,13 @@ class SourceWidget extends StatefulWidget {
     this.targetTitle,
     this.targetListTitle,
     this.description,
-    this.gkey,
+    // this.gkey,
     this.alignment,
   }) :
         // targetTitle = targetTitle ?? '',
         super(key: key);
   final Alignment alignment;
-  final GlobalKey gkey;
+  // final GlobalKey gkey;
   final String title;
   final String targetTitle;
   final List<String> targetListTitle;
@@ -29,7 +29,7 @@ class SourceWidget extends StatefulWidget {
 class _SourceWidgetState extends State<SourceWidget> {
   List<Widget> sourceWidgets;
   Offset sourceOffset = Offset.zero;
-  // final GlobalKey gKey = GlobalKey();
+  final GlobalKey gKey = GlobalKey();
 
   @override
   void initState() {
@@ -39,7 +39,7 @@ class _SourceWidgetState extends State<SourceWidget> {
   }
 
   setPos() {
-    RenderBox box = widget.gkey.currentContext.findRenderObject();
+    RenderBox box = gKey.currentContext.findRenderObject();
     Offset position = box.localToGlobal(Offset.zero);
     print('position:$position '); //this is global posssition
     // setState(() {
@@ -49,23 +49,23 @@ class _SourceWidgetState extends State<SourceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      key: widget.gkey,
-      alignment: widget.alignment,
+    return Transform.translate(
+      offset: sourceOffset,
       child: GestureDetector(
+        key: gKey,
         onDoubleTap: () {},
         onPanUpdate: (updateDet) {
           setState(() {
             sourceOffset += updateDet.delta;
           });
         },
-        onPanEnd: (enddet) {
-          setState(() {
-            setPos();
-          });
-        },
-        child: Transform.translate(
-          offset: sourceOffset,
+        // onPanEnd: (enddet) {
+        //   setState(() {
+        //     setPos();
+        //   });
+        // },
+        child: Align(
+          alignment: widget.alignment,
           child: Container(
             decoration: BoxDecoration(
                 color: Colors.amber, borderRadius: BorderRadius.circular(20)),
@@ -74,15 +74,15 @@ class _SourceWidgetState extends State<SourceWidget> {
             child: ArrowElement(
               // show: showArrows,
               // doubleSided: true,
-              bow: 0,
+              // bow: 0,
               tipLength: 8,
-              straights: false,
+              // straights: false,
               id: widget.title,
-              targetId: widget.targetTitle ?? '',
+              targetId: widget.targetTitle ?? null,
 
-              targetIdList: widget.targetListTitle ?? [],
+              targetIdList: widget.targetListTitle ?? null,
               sourceAnchor: Alignment.centerRight,
-              // targetAnchor: Alignment.centerLeft,
+              targetAnchor: Alignment.centerLeft,
               color: Colors.green,
               child: Center(child: Text('${widget.title}')),
             ),
